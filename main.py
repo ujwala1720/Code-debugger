@@ -1,7 +1,7 @@
 import openai
 import streamlit as st
 
-openai.api_key=("paste your api key")
+openai.api_key=(st.secrets["api"])
 def bot(text):
   response=openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
