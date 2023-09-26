@@ -1,4 +1,5 @@
 import openai
+import streamlit as st
 
 openai.api_key=("paste your api key")
 def bot(text):
@@ -24,4 +25,12 @@ def bot(text):
   return generated_text
 
 
-     
+def main():
+  st.set_page_config(page_title="CodeRunner")
+  prompt = st.chat_input("Place your code here")
+  if(prompt!=""):
+    code = bot(prompt)
+    st.text(code)
+
+if __name__=="__main__":
+  main()
