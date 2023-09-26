@@ -8,7 +8,7 @@ def bot(text):
         messages=[
             {
                 "role": "system",
-                "content":"debug the given code."
+                "content":"You are a code debugger."
             },
             {
                 "role": "user",
@@ -27,8 +27,9 @@ def bot(text):
 
 def main():
   st.set_page_config(page_title="CodeRunner")
+  prompt = None
   prompt = st.chat_input("Place your code here")
-  if(prompt!=""):
+  if(prompt is not None):
     code = bot(prompt)
     st.text(code)
 
