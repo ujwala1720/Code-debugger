@@ -8,7 +8,7 @@ def bot(text):
         messages=[
             {
                 "role": "system",
-                "content":"You are a code debugger."
+                "content":"You have to correct the code if there are any errors and also write the correct code."
             },
             {
                 "role": "user",
